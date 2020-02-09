@@ -6,11 +6,26 @@ const fs = require('fs');
 client.login(process.env.TOKEN);
 
 client.on('ready', () => {
-  console.log('I am ready!');
+  console.log('Je suis pret !');
 });
 
-client.on('guildMemberAdd', member => {
-user.guild.channels.get("675946020718379028").send("Bienvenue " + user + " sur le serveur " + user.guild.name + ", tu trouveras toutes les explications dans #📲fonctionnement")
+client.on('guildMemberAdd', user => {
+    let joinEmbed = new Discord.RichEmbed()
+    .setColor("#337ab7")
+    .setAuthor("Bienvenue " + user.user.username + " sur le serveur.")
+    .setDescription(" \n \n Tu es sur le serveur **"+ user.guild.name + ".** \n Les explications sont dans <#675961597839278080> \n Si tu veux ouvrir un ticket <#675964861251059733> \n Si tu as des questions, n'hésite pas ! \n \n")
+    .setImage(user.user.displayAvatarURL)
+    .setFooter("Nous te souhaitons un bon moment sur notre serveur")
+    user.guild.channels.get("675946020718379028").send(joinEmbed)
+
+});
+
+client.on("guildMemberRemove", user =>{
+    let LeaveEmbed = new Discord.RichEmbed()
+    .setColor("#980000")
+    .setDescription("Sniff... **"+ user.user.username + "** à quitter le serveur ! :disappointed_relieved: :disappointed_relieved: :disappointed_relieved:")  
+    user.guild.channels.get("675946020718379028").send(LeaveEmbed)
+
 });
 
 
