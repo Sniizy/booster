@@ -3,7 +3,7 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const fs = require('fs');
 
-client.login("Njc1OTE3Mjc5NjQwNDIwMzY0.Xj-IJQ.E9ZN8jGq8bq2JAlVJ1xBNi4LHH0");
+client.login("Njc1OTE3Mjc5NjQwNDIwMzY0.Xj_OBA.GpN9Qf1rj273ZO-WJwR9PktB7lo");
 
 
 fs.readdir('./Commandes/', (error, f) => {
