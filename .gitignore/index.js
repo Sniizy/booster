@@ -9,15 +9,10 @@ client.on('ready', () => {
   console.log('I am ready!');
 });
 
-// Create an event listener for new guild members
 client.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find(ch => ch.name === 'member-log');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Bienvenue ${member} sur le serveur Booster DO, tu trouveras toutes les explications dans #📲fonctionnement`);
+user.guild.channels.get("675946020718379028").send("Bienvenue " + user + " sur le serveur " + user.guild.name + ", tu trouveras toutes les explications dans #📲fonctionnement")
 });
+
 
 
 fs.readdir('./Commandes/', (error, f) => {
